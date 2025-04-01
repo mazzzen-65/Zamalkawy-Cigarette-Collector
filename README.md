@@ -1,6 +1,6 @@
 # Zamalkawy Cigarette Collector
 
-![Game Banner](https://img.itch.zone/aW1nLzEwNjA4MTUxLnBuZw==/original/YyP%2FfK.png)
+![Game Banner](https://imgur.com/BQ0WjeO)
 
 An edited version of Richard Albert's Gem Catcher made in godot 4.3 where you collect cigarettes as Failasof El Zamalek
 
@@ -31,7 +31,7 @@ simply open the project in godot then build
 ```
 
 ## 🎨 Screenshots
-![Gameplay Screenshot](https://img.itch.zone/aW1nLzEwNjA4MTUxLnBuZw==/original/YyP%2FfK.png)
+![Gameplay Screenshot](https://img.itch.zone/aW1hZ2UvMzM2MDg3NS8yMDUyMDgyMy5wbmc=/original/1vWv8a.png)
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to submit issues, suggestions, or pull requests.
