@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2titm2v4g65c"]
+
+[ext_resource type="Script" path="res://Scenes/Gem/Gem.cs" id="1_1uoc7"]
+[ext_resource type="Texture2D" uid="uid://bcwsh1ulipxxs" path="res://assets/sagair-hp.jpg" id="2_v5ms2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4xw5"]
+size = Vector2(127, 85)
+
+[node name="Gem" type="Area2D"]
+script = ExtResource("1_1uoc7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_v5ms2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+rotation = 1.5708
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_d4xw5")

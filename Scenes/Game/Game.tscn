@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2ytxnkj7p50h"]
+
+[ext_resource type="Script" uid="uid://dooea6bbd723p" path="res://Scenes/Game/Game.cs" id="1_8kajc"]
+[ext_resource type="PackedScene" uid="uid://ocb74pjbfwj0" path="res://Scenes/Paddle/Paddle.tscn" id="3_7v1to"]
+[ext_resource type="AudioStream" uid="uid://371p3btuanit" path="res://assets/explode.wav" id="3_oerjc"]
+[ext_resource type="PackedScene" uid="uid://c2titm2v4g65c" path="res://Scenes/Gem/Gem.tscn" id="4_41iip"]
+[ext_resource type="Texture2D" uid="uid://cffqjkibntc1e" path="res://assets/koishk.jpg" id="4_wf4a2"]
+[ext_resource type="AudioStream" uid="uid://dxl6dia8ue2fm" path="res://assets/ost_elhussiny.wav" id="6_od1qu"]
+[ext_resource type="AudioStream" uid="uid://bg26yi4lc1o00" path="res://assets/effect.wav" id="7_fb6lq"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("_spawnTimer", "_scoreLabel", "_music", "_effects", "_gameOverLabel")]
+script = ExtResource("1_8kajc")
+_gemScene = ExtResource("4_41iip")
+_spawnTimer = NodePath("Timer")
+_scoreLabel = NodePath("ScoreLabel")
+_music = NodePath("Music")
+_effects = NodePath("Effects")
+_explodeEffect = ExtResource("3_oerjc")
+_gameOverLabel = NodePath("GameOver")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(619, 147.5)
+scale = Vector2(5, 5.43814)
+texture = ExtResource("4_wf4a2")
+
+[node name="Paddle" parent="." instance=ExtResource("3_7v1to")]
+position = Vector2(561, 569)
+_speed = 500.0
+_margin = 100.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 70.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.858824, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.607843, 0.713726, 0.533333, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_od1qu")
+volume_db = -16.0
+autoplay = true
+
+[node name="Effects" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fb6lq")
+
+[node name="GameOver" type="Label" parent="."]
+visible = false
+offset_left = 399.0
+offset_top = 130.0
+offset_right = 888.0
+offset_bottom = 254.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.991164, 0.991164, 0.991164, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 90
+text = "Game Over"
